@@ -34,11 +34,9 @@ let contadorIntentos = 1;
 
 function verificarIntento() {
 
-    console.log(numerosUsados);
 
     // Obtenemos el valor del input con id "numeroUsuario" y lo convertimos a número
     let numeroUsuario = parseInt(document.getElementById('numeroUsuario').value);
-    console.log(numeroUsuario);
 
     if (numeroIntentos > 0) {
         // Verificamos si el número ingresado es igual al número aleatorio
@@ -50,7 +48,7 @@ function verificarIntento() {
             console.log('Ganaste');
 
         } else {
-            asignarTexto('h1', `Perdiste, te queda ${numeroIntentos} ${numeroIntentos == 1 ? "intento" : "intentos"}`);
+            asignarTexto('h1', `Fallaste, tienes ${numeroIntentos} ${numeroIntentos == 1 ? "intento" : "intentos"} más`);
             // Verificamos si el número ingresado es mayor o menor al número aleatorio
             if (numeroUsuario > numeroAleatorio) {
                 asignarTexto('p', 'El número es menor');
@@ -128,7 +126,7 @@ function habilitarBotonIntentar() {
 
     asignarTexto('h1', 'adivina el número');
 
-    asignarTexto('p', `Ingrese un número entre ${numerosPosibles}, posee ${intentosPosibles} intentos`);
+    asignarTexto('p', `Ingrese un número entre ${numerosPosibles}, posee ${intentosPosibles} ${intentosPosibles == 1 ? "intento" : "intentos"}`);
 }
 
 function finDelJuego() {
